@@ -14,35 +14,33 @@ int main() {
     int lista[tamanho];
     fim = tamanho - 1;
 
-    printf("\nInforme %d números inteiros em ordem crescente:\n", tamanho);
+    printf("\nInforme %d nÃºmeros inteiros em ordem crescente:\n", tamanho);
     for (int i = 0; i < tamanho; i++) {
-        printf("Número %d: ", i + 1);
+        printf("NÃºmero %d: ", i + 1);
         scanf("%d", &lista[i]);
     }
 
-    printf("\nInforme o número que deseja buscar: ");
+    printf("\nInforme o nÃºmero que deseja buscar: ");
     scanf("%d", &valorProcurado);
 
     while (inicio <= fim) {
         meio = (inicio + fim) / 2;
 
         if (lista[meio] == valorProcurado) {
-            printf("\nO número %d foi encontrado na posição %d.\n", valorProcurado, meio + 1);
+            printf("\nO nÃºmero %d foi encontrado na posiÃ§Ã£o %d.\n", valorProcurado, meio + 1);
             encontrado = 1;
             break;
         }
-
         else if (lista[meio] > valorProcurado) {
             fim = meio - 1;
         }
-
         else {
             inicio = meio + 1;
         }
     }
 
     if (!encontrado) {
-        printf("\nO número %d não foi encontrado na lista.\n", valorProcurado);
+        printf("\nO nÃºmero %d nÃ£o foi encontrado na lista.\n", valorProcurado);
     }
     return 0;
 }
